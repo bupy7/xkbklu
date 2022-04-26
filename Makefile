@@ -6,7 +6,7 @@ INSTALL=install
 INSTALL_PROGRAM=$(INSTALL)
 prefix=/usr/local
 
-BUILD_DIR=./build
+BUILD_DIR=build
 SOURCES=main.c
 OBJECTS=$(addprefix $(BUILD_DIR)/,$(SOURCES:.c=.o))
 PROGRAM=xkbklu
