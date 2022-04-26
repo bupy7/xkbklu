@@ -21,7 +21,7 @@ build: $(BUILD_DIR)/$(PROGRAM)
 $(BUILD_DIR)/$(PROGRAM): $(OBJECTS)
 	$(CC) -o $@ $(OBJECTS) $(LDFLAGS)
 
-$(BUILD_DIR)/%.o: %.c
+$(BUILD_DIR)/%.o: $(SOURCES)
 	$(CC) -o $@ -c $(CFLAGS) $<
 
 install:
