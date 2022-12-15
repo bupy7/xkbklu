@@ -11,10 +11,10 @@ Display *dpy;
  * @param[out] l_code A language code of current keyboard layout.
  * @param[out] l_pos A layout position in XKB group list.
  * @param[out] t_layout Total number of layouts in XKB group list.
- * @return "true" if executed sucessully, "false" if an
- * error occured.
+ * @return "true" if executed successfully, "false" if an
+ * error occurred.
  */
-bool get_status(char *l_code[], int *l_pos, int *t_layout) {
+bool get_status(char **l_code, int *l_pos, int *t_layout) {
     XkbStateRec state;
     XkbGetState(dpy, XkbUseCoreKbd, &state);
     XkbRF_VarDefsRec rules;
@@ -54,8 +54,8 @@ bool get_status(char *l_code[], int *l_pos, int *t_layout) {
 }
 
 /**
- * @return "true" if executed sucessully, "false" if an
- * error occured.
+ * @return "true" if executed successfully, "false" if an
+ * error occurred.
  */
 bool switch_layout(void) {
     int l_pos = 0;
